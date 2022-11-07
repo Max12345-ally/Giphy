@@ -6,12 +6,13 @@ import { useState, useEffect } from 'react';
 
 
 function App() {
+
   useEffect(() => {
     getImages();
   }, []);
 
   const [images, setImages] = useState([]);
-  
+
   const searchOptions = {
     key: process.env.REACT_APP_GIPHY_KEY,
     limit: 25,
@@ -23,7 +24,6 @@ function App() {
 
   function getImages() {
     const searchString = 'minions';
-    /* Build a URL from the searchOptions object */
     const url = `${searchOptions.api}${searchOptions.endpoint}?api_key=${searchOptions.key}&q=${searchString} &limit=${searchOptions.limit}&offset=${searchOptions.offset}&rating=${searchOptions.rating}&lang=en`;
     console.log(url)
     fetch(url)
