@@ -14,6 +14,7 @@ function App() {
   }, []);
 
   const [images, setImages] = useState([]);
+  
   function handleChange(event) {
     setSearchString(event.target.value);
   }
